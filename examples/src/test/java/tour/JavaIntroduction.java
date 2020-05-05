@@ -142,7 +142,7 @@ public final class JavaIntroduction {
         explicitDF.printSchema();
 
         // SQL
-        explicitDF.registerTempTable("characters");
+        explicitDF.createOrReplaceTempView("characters");
         Dataset<Row> centenarians = sparkSession.sql("SELECT name, age FROM characters WHERE age >= 100");
 
         // Saving DataFrame
